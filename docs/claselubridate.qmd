@@ -18,3 +18,31 @@ Cargar paquete
 library(lubridate)
 ```
 
+
+Formatear fecha y hora; ejemplo 1
+
+date-time es un punto en la línea de tiempo,
+almacenado como el número de segundos desde
+1970-01-01 00:00:00UTC
+
+```{r}
+dt <- as_datetime(1511870400)
+dt
+
+as_datetime(0000000012)
+```
+
+ANALIZAR FECHAS-HORAS
+Identifica el orden del año (y), mes (m), día (d), hora (h),
+elementos de minuto (m) y segundo (s) en sus datos.
+
+```{r}
+fecha1 <- "2011-12-31 12:59:23"
+ymd_hms(fecha1)
+
+fecha2 <- "2011-12-31 12:59"
+ymd_hm(fecha2)
+
+ymd_h("2011-12-31 12")
+```
+
