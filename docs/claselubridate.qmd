@@ -45,4 +45,84 @@ ymd_hm(fecha2)
 
 ymd_h("2011-12-31 12")
 ```
+Ahora cargaremos una base de datos que nos facilete la aplicacion de lubridate en casos reales.
+
+Para este ejemplo utilizaremos una base de datos de eBird, estudiaremos la deteccion de Momotus lessonii a lo largo del año y hora. 
+
+```{r}
+Datos <- read.delim("bucmot/detecciones.txt")
+```
+
+Primero haremos una breve limpieza de datos
+```{r}
+DatosLimpios <- Datos[,c(7, 11, 31, 32)]
+
+head(DatosLimpios)
+```
+
+Al ser datos crudos, estos presentan algunos errores, por ejemplo en OBSERVATION.COUNT observaremos unas "X"
+
+```{r}
+table(DatosLimpios$OBSERVATION.COUNT)
+```
+
+Esta observaciones que son X es donde al menos se observo un Momotus lessonii, podemos cambiarlas por un "1" o eliminarlas de nuestra base de datos
+
+```{r}
+DatosLimpios[DatosLimpios$OBSERVATION.COUNT == "X", ]$OBSERVATION.COUNT <- 1
+table(DatosLimpios$OBSERVATION.COUNT)
+
+```
+
+Ahora cambiaremos nuestra fecha a un formato ordinal, para esto devemos asegurarnos que nuestra fecha este en formato "Date"
+
+```{r}
+class(DatosLimpios$OBSERVATION.DATE)
+```
+Como en este caso la fecha esta en formato "character", la cambiaremos a "date"
+
+```{r}
+DatosLimpios$OBSERVATION.DATE <- ymd(DatosLimpios$OBSERVATION.DATE)
+class(DatosLimpios$OBSERVATION.DATE)
+
+```
+El siguiente paso es cambiar de fecha year-mounth-day a ordinal
+
+```{r}
+DatosLimpios$FechaOrdinal <- yday(DatosLimpios$OBSERVATION.DATE)
+plot(DatosLimpios$FechaOrdinal)
+```
+
+
+Ahora podemos realizar un grafico que muestre las observaciones de Momotus lessonii a lor largo del año
+
+```{r}
+library(ggplot2)
+
+ggplot(data = DatosLimpios, mapping = aes(x= FechaOrdinal, y= OBSERVATION.COUNT)) +
+  geom_point()
+
+```
+
+
+Ahora hagamos un ejemplo con un ave migratoria
+
+
+```{r}
+SETCHR <- read.delim("setchy/setchr.txt")
+
+SETCHR[SETCHR$OBSERVATION.COUNT == "X", ]$OBSERVATION.COUNT <- 1
+
+SETCHR$OBSERVATION.DATE <- ymd(SETCHR$OBSERVATION.DATE)
+
+SETCHR$FechaOrdinal <- yday(SETCHR$OBSERVATION.DATE)
+
+ggplot(data = SETCHR, mapping = aes(x= FechaOrdinal, y= OBSERVATION.COUNT)) +
+  geom_point()
+```
+
+
+
+
+
 
