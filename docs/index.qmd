@@ -1,0 +1,13 @@
+---
+title: "Clase uso de Lubridate en Ecologia"
+format: html
+editor: visual
+---
+
+[lubridate](https://lubridate.tidyverse.org/) es un paquete en el lenguaje de programación R que se utiliza para manipular y trabajar con fechas y horas de manera eficiente. Este paquete proporciona funciones específicas para facilitar la manipulación y cálculos relacionados con fechas y horas en R. Aquí hay algunas características clave del paquete lubridate:
+
+lubridate Facilita la conversión de cadenas de texto a objetos de fecha y hora. La función ymd() (año-mes-día) es un ejemplo de esto, donde puedes convertir una cadena de fecha en un objeto de fecha de una manera clara y sencilla.
+
+[Clase gratuita](claselubridate.html)
+
+[Uso de lubridate recurso](https://rawgit.com/rstudio/cheatsheets/main/lubridate.pdf)

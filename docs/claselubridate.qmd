@@ -1,0 +1,20 @@
+---
+title: "Clase lubridate"
+format: html
+editor: visual
+---
+
+Instalacion 
+
+```{r, eval=FALSE}
+
+install.packages("lubridate")
+
+```
+
+Cargar paquete
+
+```{r}
+library(lubridate)
+```
+
