@@ -15,6 +15,7 @@ Hora: 6:00 pm a 8:00 pm UTC-6
 lubridate Facilita la conversión de cadenas de texto a objetos de fecha y hora. La función ymd() (año-mes-día) es un ejemplo de esto, donde puedes convertir una cadena de fecha en un objeto de fecha de una manera clara y sencilla.
 
 [Clase gratuita](claselubridate.html)
+
 [Uso de lubridate recurso](https://rawgit.com/rstudio/cheatsheets/main/lubridate.pdf)
 
 [Mayor Información](https://wa.me/50499549551)
