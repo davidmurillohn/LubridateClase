@@ -4,7 +4,11 @@ format: html
 editor: visual
 ---
 
-Instalacion
+[Descargar Materiales a utilizar](https://drive.google.com/drive/folders/14LgLOZ8MTnEDp0QegDIv8BHLeYQ3Ggnj?usp=drive_link)
+
+[Grabación de la clase](https://youtu.be/g5HQnx3hCPQ)
+
+Instalación
 
 ```{r, eval=FALSE}
 
@@ -117,4 +121,6 @@ ggplot(data = SETCHR, mapping = aes(x= FechaOrdinal, y= OBSERVATION.COUNT)) +
   geom_point()
 ```
 
-![HN Biology Investigation](HN%20Cursos%20publicidad/HN%20Biology%20Inv%20large.jpg)
+Codigo restante en actualización...
+
+![HN Biology Investigation](HN Cursos publicidad/HN Biology Inv large.jpg)
